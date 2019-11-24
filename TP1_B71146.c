@@ -17,6 +17,7 @@ void solve();
 void validate();
 void readData();
 
+//Variables made to save rows, columns, amount of hydrants, and amount of drains.
 int rows = 0;
 int columns = 0;
 int amountOfHydrants = 0;
@@ -24,11 +25,11 @@ int amountOfDrains = 0;
 
 struct tile{
     //Verifica la validez en el siguiente orden: Norte, SUr, Este, Oeste
-    int validez[4];
+    int validez[4] = {0,0,0,0};
     char id;
 };
 
-
+//Main function.
 int main(int argc, char* argv[]){
 
   readData();
@@ -52,6 +53,7 @@ int main(int argc, char* argv[]){
   //}
 }
 
+//Function that creates tiles.
 void createTile(char id){
   if(id == '0'){
     struct tile tile0;
@@ -199,8 +201,9 @@ void createTile(char id){
   }
 }
 
+//Function that fills matrix with structs
 void fillMatrix(){
-  //Function that fills matrix with structs
+
   for(int rowIndex = 0; rowIndex < rows; rowIndex++){
     for(int columnIndex = 0; columnIndex < columns; columnIndex++){
       
@@ -208,23 +211,28 @@ void fillMatrix(){
   }
 }
 
-void validate(){
+//Function that validates if the pipe has any leaks
+bool validate(){
 
 }
 
+//Function that solves if there are any pipe leaks.
 void solve(){
 
 }
 
+//Function that converts from Binary to Text. 
 void convertBinToTxt(){
   printf("Llamado Bin to Txt");
 }
 
+//Function that converts from Text to Binary.
 void convertTxtToBin(){
   printf("Llamado Txt to Bin");
 }
 
-void readData(){
+//Function that reads data from files.
+void readDataFromFile(){
   FILE *file;
   char data[100];
   file = fopen();
@@ -240,4 +248,9 @@ void readData(){
   }
   scanf("%d %d %d %d", &rows, &columns, &amountOfHydrants, &amountOfDrains);
   while(scanf("%d ",))
+}
+
+//Function that reads data from console input.
+void readDataFromConsole(){
+  
 }
