@@ -234,20 +234,20 @@ void convertTxtToBin(){
 //Function that reads data from files.
 void readDataFromFile(){
   FILE *file;
-  char data[100];
   file = fopen();
   if(file == NULL){
     printf("\nFile is empty!\n");
     return -1;
   }else{
     printf("File content: \n");
-    while(feof(file) == 0){
-      fgets(data, 100, file);
-      printf("%s", data);
+    fscanf("
+      fscanf("%d %d %d %d\n", &rows, &columns, &amountOfHydrants, &amountOfDrains);
+      char matrix[rows][columns];
+      for(int index = 0; index < amountOfHydrants; index++){
+        
+      }
     }
   }
-  scanf("%d %d %d %d", &rows, &columns, &amountOfHydrants, &amountOfDrains);
-  while(scanf("%d ",))
 }
 
 //Function that reads data from console input.
