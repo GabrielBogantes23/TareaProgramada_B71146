@@ -34,56 +34,63 @@ int main(int argc, char* argv[]){
   validez[1] = 0;
   validez[2] = 0;
   validez[3] = 0;
+  
   tile0.id = 0;
 
   struct tile tile1;
-  validez[0] = 0;
-  validez[1] = 0;
-  validez[2] = 0;
-  validez[3] = 1;
+  tile1.validez[0] = 0;
+  tile1.validez[1] = 0;
+  tile1.validez[2] = 0;
+  tile1.validez[3] = 1;
   
   tile1.id = 1;
 
   struct tile tile2;
-  validez[0] = 0;
-  validez[1] = 1;
-  validez[2] = 0;
-  validez[3] = 0;
+  tile2.validez[0] = 0;
+  tile2.validez[1] = 1;
+  tile2.validez[2] = 0;
+  tile2.validez[3] = 0;
   
   tile2.id = 2;
 
   struct tile tile3;
-  validez[0] = 0;
-  validez[1] = 1;
-  validez[2] = 0;
-  validez[3] = 1;
+  tile3.validez[0] = 0;
+  tile3.validez[1] = 1;
+  tile3.validez[2] = 0;
+  tile3.validez[3] = 1;
   
   tile3.id = 3;
 
   struct tile tile4;
-  validez[0] = 0;
-  validez[1] = 0;
-  validez[2] = 1;
-  validez[3] = 0;
+  tile4.validez[0] = 0;
+  tile4.validez[1] = 0;
+  tile4.validez[2] = 1;
+  tile4.validez[3] = 0;
 
   tile4.id = 4;
 
   struct tile tile5;
-  validez[0] = 0;
-  validez[1] = 0;
-  validez[2] = 1;
-  validez[3] = 1;
+  tile5.validez[0] = 0;
+  tile5.validez[1] = 0;
+  tile5.validez[2] = 1;
+  tile5.validez[3] = 1;
 
   tile5.id = 5;
 
   struct tile tile6;
-  tile6.north = false;
-  tile6.south = true;
-  tile6.east = true;
-  tile6.west = false;
+  tile6.validez[0] = 0;
+  tile6.validez[1] = 1;
+  tile6.validez[2] = 1;
+  tile6.validez[3] = 0;
+
   tile6.id = 6;
 
   struct tile tile7;
+  tile7.validez[0] = 0;
+  tile7.validez[1] = 0;
+  tile7.validez[2] = 0;
+  tile7.validez[3] = 0;
+
   tile7.north = false;
   tile7.south = true;
   tile7.east = true;
