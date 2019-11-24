@@ -21,10 +21,8 @@ int amountOfHydrants = 0;
 int amountOfDrains = 0;
 
 struct tile{
-    bool north;
-    bool south;
-    bool east;
-    bool west;
+    //Verifica la validez en el siguiente orden: Norte, SUr, Este, Oeste
+    int validez[4];
     unsigned int id;
 };
 
@@ -32,45 +30,50 @@ struct tile{
 int main(int argc, char* argv[]){
 
   struct tile tile0;
-  tile0.north = false;
-  tile0.south = false;
-  tile0.east = false;
-  tile0.west = false;
+  validez[0] = 0;
+  validez[1] = 0;
+  validez[2] = 0;
+  validez[3] = 0;
   tile0.id = 0;
 
   struct tile tile1;
-  tile1.north = false;
-  tile1.south = false;
-  tile1.east = false;
-  tile1.west = true;
+  validez[0] = 0;
+  validez[1] = 0;
+  validez[2] = 0;
+  validez[3] = 1;
+  
   tile1.id = 1;
 
   struct tile tile2;
-  tile2.north = false;
-  tile2.south = true;
-  tile2.east = false;
-  tile2.east = false;
+  validez[0] = 0;
+  validez[1] = 1;
+  validez[2] = 0;
+  validez[3] = 0;
+  
   tile2.id = 2;
 
   struct tile tile3;
-  tile3.north = false;
-  tile3.south = true;
-  tile3.east = false;
-  tile3.west = true;
+  validez[0] = 0;
+  validez[1] = 1;
+  validez[2] = 0;
+  validez[3] = 1;
+  
   tile3.id = 3;
 
   struct tile tile4;
-  tile4.north = false;
-  tile4.south = false;
-  tile4.east = true;
-  tile4.west = false;
+  validez[0] = 0;
+  validez[1] = 0;
+  validez[2] = 1;
+  validez[3] = 0;
+
   tile4.id = 4;
 
   struct tile tile5;
-  tile5.north = false;
-  tile5.south = false;
-  tile5.east = true;
-  tile5.west = true;
+  validez[0] = 0;
+  validez[1] = 0;
+  validez[2] = 1;
+  validez[3] = 1;
+
   tile5.id = 5;
 
   struct tile tile6;
