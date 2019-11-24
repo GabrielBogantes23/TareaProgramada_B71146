@@ -30,10 +30,10 @@ struct tile{
 int main(int argc, char* argv[]){
 
   struct tile tile0;
-  validez[0] = 0;
-  validez[1] = 0;
-  validez[2] = 0;
-  validez[3] = 0;
+  tile0.validez[0] = 0;
+  tile0.validez[1] = 0;
+  tile0.validez[2] = 0;
+  tile0.validez[3] = 0;
   
   tile0.id = 0;
 
@@ -87,70 +87,74 @@ int main(int argc, char* argv[]){
 
   struct tile tile7;
   tile7.validez[0] = 0;
-  tile7.validez[1] = 0;
-  tile7.validez[2] = 0;
-  tile7.validez[3] = 0;
+  tile7.validez[1] = 1;
+  tile7.validez[2] = 1;
+  tile7.validez[3] = 1;
 
-  tile7.north = false;
-  tile7.south = true;
-  tile7.east = true;
-  tile7.west = true;
   tile7.id = 7;
 
   struct tile tile8;
-  tile8.north = true;
-  tile8.south = false;
-  tile8.east = false;
-  tile8.west = false;
+  tile8.validez[0] = 1;
+  tile8.validez[1] = 0;
+  tile8.validez[2] = 0;
+  tile8.validez[3] = 1;
+  
   tile8.id = 8;
 
   struct tile tile9;
-  tile9.north = true;
-  tile9.south = false;
-  tile9.east = false;
-  tile9.west = true;
+  tile9.validez[0] = 1;
+  tile9.validez[1] = 1;
+  tile9.validez[2] = 0;
+  tile9.validez[3] = 0;
+  
   tile9.id = 9;
 
   struct tile tileA;
-  tileA.north = true;
-  tileA.north = true;
-  tileA.east = false;
-  tileA.west = false;
+  tileA.validez[0] = 1;
+  tileA.validez[1] = 1;
+  tileA.validez[2] = 0;
+  tileA.validez[3] = 0;
+  
   tileA.id = 10;
 
   struct tile tileB;
-  tileB.north = true;
-  tileB.south = true;
-  tileB.east = false;
-  tileB.west = true;
+  tileB.validez[0] = 1;
+  tileB.validez[1] = 1;
+  tileB.validez[2] = 0;
+  tileB.validez[3] = 1;
+  
   tileB.id = 11;
 
   struct tile tileC;
-  tileC.north = true;
-  tileC.south = false;
-  tileC.east = true;
-  tileC.west = false;
+  tileC.validez[0] = 1;
+  tileC.validez[1] = 0;
+  tileC.validez[2] = 1;
+  tileC.validez[3] = 0;
+
   tileC.id = 12;
 
   struct tile tileD;
-  tileD.north = true;
-  tileD.south = false;
-  tileD.east = true;
-  tileD.west = true;
+  tileD.validez[0] = 1;
+  tileD.validez[1] = 0;
+  tileD.validez[2] = 1;
+  tileD.validez[3] = 1;
+
   tileD.id = 13;
 
   struct tile tileE;
-  tileE.north = true;
-  tileE.south = true;
-  tileE.east = true;
-  tileE.west = false;
+  tileE.validez[0] = 1;
+  tileE.validez[1] = 1;
+  tileE.validez[2] = 1;
+  tileE.validez[3] = 0;
+
   tileD.id = 14;
 
   struct tile tileF;
-  tileF.north = true;
-  tileF.south = true;
-  tileF.east = true;
-  tileF.west = true;
+  tileF.validez[0] = 1;
+  tileF.validez[1] = 1;
+  tileF.validez[2] = 1;
+  tileF.validez[3] = 1;
+  
   tileF.id = 15;
 
   leerDatos();
