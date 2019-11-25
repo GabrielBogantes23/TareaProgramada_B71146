@@ -69,7 +69,19 @@ int main(int argc, char* argv[]){
       }else if(strcmp("--help", argv[1] == 0){
       printf("You can do three things regarding the commands you input:\n");
       printf("1. 'validate': when you enter this as your first argument, the program will check if there are any leaks within the specified pipeline.");
-      printf("\nHowever, you also have the option to tell in which format the validation will be done, ");
+      printf("\nIf there are any leaks, the program will print the position and direction of the leaks");
+      printf("\nHowever, you also have the option to tell in which format the validation will be done.");
+      printf("\nIf you were to write '-it' as your second argument, the validation would be done using .txt files, where as if you were to write '-ib' the validation would be done using .bin files.");
+      printf("\n");
+      printf("2. 'solve': when you enter this as your first agrument, the program will solve any leaks there are within the pipeline.");
+      printf("\nHowever, you also have the option to tell in which format the solving will be done.");
+      printf("\nIf you were to write '-it' as your second argument, the solving would be done using .txt files, where as if you were to write '-ib' the solving would be done using .bin files.");
+      printf("\nIf the solving was possible, it will have the solution as the output. If it was not possible, it will print 'invalid data'");
+      printf("\n");
+      printf("3. 'convert': when you enter this as your first argument, the program will convert the file from .txt to .bin or vice versa.");
+      printf("\nYou have to write the format for the input or the output, for example: ./convertExample -it input.txt -ob output.bin");
+      printf("\nThere's no difference if you write the input or the ouput before or after.");
+    
     }else
 }
 
