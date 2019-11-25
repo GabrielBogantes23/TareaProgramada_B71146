@@ -66,8 +66,11 @@ int main(int argc, char* argv[]){
           printf("leer texto");
           printf("solve");
         }
-      }
-    }
+      }else if(strcmp("--help", argv[1] == 0){
+      printf("You can do three things regarding the commands you input:\n");
+      printf("1. 'validate': when you enter this as your first argument, the program will check if there are any leaks within the specified pipeline.");
+      printf("\nHowever, you also have the option to tell in which format the validation will be done, ");
+    }else
 }
 
 //Function that creates tiles.
