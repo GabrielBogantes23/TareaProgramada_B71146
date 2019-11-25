@@ -18,6 +18,9 @@ void solve();
 bool validate();
 void readData();
 void fillMatrix(char id, int rows, int columns);
+void readFirstLine();
+void readHydrantsAndDrains(int amountOfHydrants, int amountOfDrains);
+void readMatrix(int rows, int columns);
 
 //Variables made to save rows, columns, amount of hydrants, and amount of drains.
 int rows = 0;
@@ -34,6 +37,8 @@ struct tile{
 //Main function.
 int main(int argc, char* argv[]){
   fillMatrix('0', 20, 20);
+  readFirstLine();
+  readMatrix(rows, columns);
   //Check the amount of arguments.
     if(argc <= 6 && argc >= 2){
       //Cases where the user wants to convert.
@@ -92,9 +97,16 @@ int main(int argc, char* argv[]){
     }
 }
 
-//Function that creates tiles.
-void createTile(char id){
+//Reads the first line.
+void readFirstLine(){
+  scanf("%d %d %d %d", &rows, &columns, &amountOfHydrants, &amountOfDrains);
 }
+
+void readHydrantsAndDrains(int amountOfHydrants, int amountOfDrains){
+
+}
+
+void readMatrix(int rows, int columns)
 
 //Function that fills matrix with structs
 void fillMatrix(char id, int rows, int columns){
