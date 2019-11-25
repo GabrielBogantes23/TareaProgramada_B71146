@@ -32,25 +32,42 @@ struct tile{
 //Main function.
 int main(int argc, char* argv[]){
 
-  readData();
-  //if(argc <= 5 || argc >= 2){
-    //if(argv[1] == "convert"){
-      //if(argv[2] == "ib"){
-        //convertBinToTxt();
-      //}else if(argv[2] == "it"){
-        //convertTxtToBin();
-      //}
-    //}else if(argv[1] == "solve"){
-      //if(argc == 3)
-      //solve();
-    //}else if(argv[1] == "validate"){
-      //validate();
-    //}
-    //leerDatosArchivo();
-  //}else{
-    //printf("Cantidad de argumentos invalidos, ingrese la cantidad correcta.");
-    //return -1;
-  //}
+  //Check the amount of arguments.
+  if(argc <= 6 && argc >= 2){
+    //Cases where the user wants to convert.
+    printf("cantidad de argumentos: %d\n",argc);
+    if(strcmp("convert", argv[1]) == 0){
+        if(strcmp("-it", argv[2]) == 0 || strcmp("-it", argv[4]) == 0){
+          printf("El input es en txt\n");
+        }else if(strcmp("-ot", argv[2]) == 0 || strcmp("-ot", argv[4]) == 0){
+          printf("El output es en txt\n");
+        }else if(strcmp("-ib", argv[2]) == 0 || strcmp("-ib", argv[4]) == 0){
+          printf("El input es en bin\n");
+        }else if(strcmp("-ob", argv[2]) == 0 || strcmp("-ob", argv[4]) == 0){
+          printf("El output es en bin\n");
+        }else{
+          printf("Los argumentos fueron ingresados incorrectamente");
+        }
+      }else if(strcmp("validate", argv[1]) == 0){
+        if(argc == 3){
+          if(strcmp("-it", argv[2]) == 0){
+            printf("Validar con it\n");
+          }else if(strcmp("-ib", argv[2]) == 0){
+            printf("Validar con ib\n");
+          }
+        }else{
+          printf("Validar con it\n");
+        }
+      }else if(strcmp("solve", argv[1]) == 0){
+        if(strcmp("-ib", argv[2]) == 0){
+          printf("leer binario");
+          printf("solve");
+        }else if(strcmp("-it", argv[2]) == 0){
+          printf("leer texto");
+          printf("solve");
+        }
+      }
+    }
 }
 
 //Function that creates tiles.
