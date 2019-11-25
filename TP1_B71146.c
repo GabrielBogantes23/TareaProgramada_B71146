@@ -31,58 +31,63 @@ struct tile{
 
 //Main function.
 int main(int argc, char* argv[]){
-
+  
   //Check the amount of arguments.
-  if(argc <= 6 && argc >= 2){
-    //Cases where the user wants to convert.
-    printf("cantidad de argumentos: %d\n",argc);
-    if(strcmp("convert", argv[1]) == 0){
-        if(strcmp("-it", argv[2]) == 0 || strcmp("-it", argv[4]) == 0){
-          printf("El input es en txt\n");
-        }else if(strcmp("-ot", argv[2]) == 0 || strcmp("-ot", argv[4]) == 0){
-          printf("El output es en txt\n");
-        }else if(strcmp("-ib", argv[2]) == 0 || strcmp("-ib", argv[4]) == 0){
-          printf("El input es en bin\n");
-        }else if(strcmp("-ob", argv[2]) == 0 || strcmp("-ob", argv[4]) == 0){
-          printf("El output es en bin\n");
-        }else{
-          printf("Los argumentos fueron ingresados incorrectamente");
-        }
-      }else if(strcmp("validate", argv[1]) == 0){
-        if(argc == 3){
-          if(strcmp("-it", argv[2]) == 0){
-            printf("Validar con it\n");
-          }else if(strcmp("-ib", argv[2]) == 0){
-            printf("Validar con ib\n");
+    if(argc <= 6 && argc >= 2){
+      //Cases where the user wants to convert.
+      printf("cantidad de argumentos: %d\n",argc);
+      if(strcmp("convert", argv[1]) == 0){
+          if(strcmp("-it", argv[2]) == 0 || strcmp("-it", argv[4]) == 0){
+            printf("El input es en txt\n");
+          }else if(strcmp("-ot", argv[2]) == 0 || strcmp("-ot", argv[4]) == 0){
+            printf("El output es en txt\n");
+          }else if(strcmp("-ib", argv[2]) == 0 || strcmp("-ib", argv[4]) == 0){
+            printf("El input es en bin\n");
+          }else if(strcmp("-ob", argv[2]) == 0 || strcmp("-ob", argv[4]) == 0){
+            printf("El output es en bin\n");
+          }else{
+            printf("Los argumentos fueron ingresados incorrectamente");
           }
-        }else{
-          printf("Validar con it\n");
-        }
-      }else if(strcmp("solve", argv[1]) == 0){
-        if(strcmp("-ib", argv[2]) == 0){
-          printf("leer binario");
-          printf("solve");
-        }else if(strcmp("-it", argv[2]) == 0){
-          printf("leer texto");
-          printf("solve");
-        }
-      }else if(strcmp("--help", argv[1] == 0){
-      printf("You can do three things regarding the commands you input:\n");
-      printf("1. 'validate': when you enter this as your first argument, the program will check if there are any leaks within the specified pipeline.");
-      printf("\nIf there are any leaks, the program will print the position and direction of the leaks");
-      printf("\nHowever, you also have the option to tell in which format the validation will be done.");
-      printf("\nIf you were to write '-it' as your second argument, the validation would be done using .txt files, where as if you were to write '-ib' the validation would be done using .bin files.");
-      printf("\n");
-      printf("2. 'solve': when you enter this as your first agrument, the program will solve any leaks there are within the pipeline.");
-      printf("\nHowever, you also have the option to tell in which format the solving will be done.");
-      printf("\nIf you were to write '-it' as your second argument, the solving would be done using .txt files, where as if you were to write '-ib' the solving would be done using .bin files.");
-      printf("\nIf the solving was possible, it will have the solution as the output. If it was not possible, it will print 'invalid data'");
-      printf("\n");
-      printf("3. 'convert': when you enter this as your first argument, the program will convert the file from .txt to .bin or vice versa.");
-      printf("\nYou have to write the format for the input or the output, for example: ./convertExample -it input.txt -ob output.bin");
-      printf("\nThere's no difference if you write the input or the ouput before or after.");
-    
-    }else
+        }else if(strcmp("validate", argv[1]) == 0){
+          if(argc == 3){
+            if(strcmp("-it", argv[2]) == 0){
+              printf("Validar con it\n");
+            }else if(strcmp("-ib", argv[2]) == 0){
+              printf("Validar con ib\n");
+            }
+          }else{
+            printf("Validar con it\n");
+          }
+        }else if(strcmp("solve", argv[1]) == 0){
+          if(strcmp("-ib", argv[2]) == 0){
+            printf("leer binario");
+            printf("solve");
+          }else if(strcmp("-it", argv[2]) == 0){
+            printf("leer texto");
+            printf("solve");
+          }
+        }else if(strcmp("--help", argv[1]) == 0){
+        printf("\n");
+        printf("You can do three things regarding the commands you input:\n");
+        printf("\n");
+        printf("\n");
+        printf("1. 'validate': when you enter this as your first argument, the program will check if there are any leaks within the specified pipeline.");
+        printf("\nIf there are any leaks, the program will print the position and direction of the leaks");
+        printf("\nHowever, you also have the option to tell in which format the validation will be done.");
+        printf("\nIf you were to write '-it' as your second argument, the validation would be done using .txt files, where as if you were to write '-ib' the validation would be done using .bin files.");
+        printf("\n");
+        printf("\n");
+        printf("2. 'solve': when you enter this as your first agrument, the program will solve any leaks there are within the pipeline.");
+        printf("\nHowever, you also have the option to tell in which format the solving will be done.");
+        printf("\nIf you were to write '-it' as your second argument, the solving would be done using .txt files, where as if you were to write '-ib' the solving would be done using .bin files.");
+        printf("\nIf the solving was possible, it will have the solution as the output. If it was not possible, it will print 'invalid data'");
+        printf("\n");
+        printf("\n");
+        printf("3. 'convert': when you enter this as your first argument, the program will convert the file from .txt to .bin or vice versa.");
+        printf("\nYou have to write the format for the input or the output, for example: ./convertExample -it input.txt -ob output.bin");
+        printf("\nThere's no difference if you write the input or the ouput before or after.");
+      }
+    }
 }
 
 //Function that creates tiles.
