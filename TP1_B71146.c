@@ -17,10 +17,9 @@ void convertTxtToBin();
 void solve();
 bool validate();
 void readData();
-void fillMatrix(char id, int rows, int columns);
+char** fillMatrix(char id, int rows, int columns);
 void readFirstLine();
-void readHydrantsAndDrains(int amountOfHydrants, int amountOfDrains);
-void readMatrix(int rows, int columns);
+char readID(char id);
 
 //Variables made to save rows, columns, amount of hydrants, and amount of drains.
 int rows = 0;
@@ -36,9 +35,14 @@ struct tile{
 
 //Main function.
 int main(int argc, char* argv[]){
-  fillMatrix('0', 20, 20);
+  char id;
   readFirstLine();
-  readMatrix(rows, columns);
+  for(int index = 0; index < rows * columns; index++){
+    id = readID(id);
+    fillMatrix(id, rows, columns);
+  }
+
+
   //Check the amount of arguments.
     if(argc <= 6 && argc >= 2){
       //Cases where the user wants to convert.
@@ -99,17 +103,18 @@ int main(int argc, char* argv[]){
 
 //Reads the first line.
 void readFirstLine(){
-  scanf("%d %d %d %d", &rows, &columns, &amountOfHydrants, &amountOfDrains);
+  scanf("%d %d", &rows, &columns);
 }
 
-void readHydrantsAndDrains(int amountOfHydrants, int amountOfDrains){
 
+char readID(char id){
+  scanf(" %c", &id);
+  return id;
 }
-
-void readMatrix(int rows, int columns)
 
 //Function that fills matrix with structs
-void fillMatrix(char id, int rows, int columns){
+//Asignates an id and valid positions for every tile.
+char** fillMatrix(char id, int rows, int columns){
   char matrix[rows][columns];
   for(int rowIndex = 0; rowIndex < rows; rowIndex++){
     for(int columnIndex = 0; columnIndex < columns; columnIndex++){
@@ -124,6 +129,7 @@ void fillMatrix(char id, int rows, int columns){
         matrix[rowIndex][columnIndex] = tile0.id;
         printf("%c ", matrix[rowIndex][columnIndex]);
 
+
       }else if(id == '1'){
         struct tile tile1;
         tile1.validez[0] = 0;
@@ -132,6 +138,7 @@ void fillMatrix(char id, int rows, int columns){
         tile1.validez[3] = 1;
 
         tile1.id = '1';
+        matrix[rowIndex][columnIndex] = tile1.id;
 
       }else if(id == '2'){
         struct tile tile2;
@@ -141,6 +148,7 @@ void fillMatrix(char id, int rows, int columns){
         tile2.validez[3] = 0;
 
         tile2.id = '2';
+        matrix[rowIndex][columnIndex] = tile2.id;
 
       }else if(id == '3'){
         struct tile tile3;
@@ -150,6 +158,7 @@ void fillMatrix(char id, int rows, int columns){
         tile3.validez[3] = 1;
 
         tile3.id = '3';
+        matrix[rowIndex][columnIndex] = tile3.id;
 
       }else if(id == '4'){
         struct tile tile4;
@@ -159,6 +168,7 @@ void fillMatrix(char id, int rows, int columns){
         tile4.validez[3] = 0;
 
         tile4.id = '4';
+        matrix[rowIndex][columnIndex] = tile4.id;
 
       }else if(id == '5'){
         struct tile tile5;
@@ -168,6 +178,7 @@ void fillMatrix(char id, int rows, int columns){
         tile5.validez[3] = 1;
 
         tile5.id = '5';
+        matrix[rowIndex][columnIndex] = tile5.id;
 
       }else if(id == '6'){
         struct tile tile6;
@@ -177,6 +188,7 @@ void fillMatrix(char id, int rows, int columns){
         tile6.validez[3] = 0;
 
         tile6.id = '6';
+        matrix[rowIndex][columnIndex] = tile6.id;
 
       }else if(id == '7'){
         struct tile tile7;
@@ -186,6 +198,7 @@ void fillMatrix(char id, int rows, int columns){
         tile7.validez[3] = 1;
 
         tile7.id = '7';
+        matrix[rowIndex][columnIndex] = tile7.id;
 
       }else if(id == '8'){
         struct tile tile8;
@@ -195,6 +208,7 @@ void fillMatrix(char id, int rows, int columns){
         tile8.validez[3] = 1;
 
         tile8.id = '8';
+        matrix[rowIndex][columnIndex] = tile8.id;
 
       }else if(id == '9'){
         struct tile tile9;
@@ -204,6 +218,7 @@ void fillMatrix(char id, int rows, int columns){
         tile9.validez[3] = 0;
 
         tile9.id = '9';
+        matrix[rowIndex][columnIndex] = tile9.id;
 
       }else if(id == 'A'){
         struct tile tileA;
@@ -213,6 +228,7 @@ void fillMatrix(char id, int rows, int columns){
         tileA.validez[3] = 0;
 
         tileA.id = 'A';
+        matrix[rowIndex][columnIndex] = tileA.id;
 
       }else if(id == 'B'){
         struct tile tileB;
@@ -222,6 +238,7 @@ void fillMatrix(char id, int rows, int columns){
         tileB.validez[3] = 1;
 
         tileB.id = 'B';
+        matrix[rowIndex][columnIndex] = tileB.id;
 
       }else if(id == 'C'){
         struct tile tileC;
@@ -231,6 +248,7 @@ void fillMatrix(char id, int rows, int columns){
         tileC.validez[3] = 0;
 
         tileC.id = 'C';
+        matrix[rowIndex][columnIndex] = tileC.id;
 
       }else if(id == 'D'){
         struct tile tileD;
@@ -240,6 +258,7 @@ void fillMatrix(char id, int rows, int columns){
         tileD.validez[3] = 1;
 
         tileD.id = 'D';
+        matrix[rowIndex][columnIndex] = tileD.id;
 
       }else if(id == 'E'){
         struct tile tileE;
@@ -249,6 +268,7 @@ void fillMatrix(char id, int rows, int columns){
         tileE.validez[3] = 0;
 
         tileE.id = 'E';
+        matrix[rowIndex][columnIndex] = tileE.id;
 
       }else if(id == 'F'){
         struct tile tileF;
@@ -258,10 +278,13 @@ void fillMatrix(char id, int rows, int columns){
         tileF.validez[3] = 1;
 
         tileF.id = 'F';
+        matrix[rowIndex][columnIndex] = tileF.id;
+        printf("%c ", matrix[rowIndex][columnIndex]);
       }
     }
     printf("\n");
   }
+  return matrix;
 }
 
 //Function that validates if the pipe has any leaks
@@ -269,10 +292,17 @@ bool validate(){
   return true;
 }
 
-//Function that solves if there are any pipe leaks.
-void solve(){
-
+void printMatrix(char** matrix){
+  for(int i = 0; i < rows; i++){
+    for(int j = 0; j < columns; j++){
+      printf("%c ", matrix[i][j]);
+    }
+    printf("\n");
+  }
 }
+
+//Function that solves if there are any pipe leaks.
+void solve(){}
 
 //Function that converts from Binary to Text.
 void convertBinToTxt(){
@@ -282,27 +312,4 @@ void convertBinToTxt(){
 //Function that converts from Text to Binary.
 void convertTxtToBin(){
   printf("Llamado Txt to Bin");
-}
-
-//Function that reads data from files.
-//void readDataFromFile(){
-  //FILE *file;
-  //file = fopen();
-  //if(file == NULL){
-    //printf("\nFile is empty!\n");
-    //return -1;
-  //}else{
-    //printf("File content: \n");
-    //fscanf("
-      //fscanf("%d %d %d %d", &rows, &columns, &amountOfHydrants, &amountOfDrains);
-      //char matrix[rows][columns];
-      //for(int index = 0; index < amountOfHydrants; index++){
-
-      //}
-    //}
-  //}
-//}
-//Function that reads data from console input.
-void readDataFromConsole(){
-
 }
